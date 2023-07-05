@@ -5,6 +5,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.qameta.allure.selenide.LogType;
 import lombok.extern.log4j.Log4j2;
+import org.itacademy.homework9selenide.utils.Config;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
@@ -24,6 +25,9 @@ public class BaseTest {
     public void start(String startType,
                       @Optional("browser") String browser,
                       @Optional("version") String version) {
+        log.info("BEFORE CLASS config get properties");
+        Config.getProperties();
+
         log.info("BEFORE CLASS startType run: " + startType);
         if (startType.equals("local")) {
             startLocal();
