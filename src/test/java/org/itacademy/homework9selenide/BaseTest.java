@@ -29,7 +29,6 @@ public class BaseTest {
                       @Optional("browser") String browser,
                       @Optional("version") String version) {
         log.info("BEFORE CLASS config get properties");
-//        Config.getProperties();
         log.info("BUNDLE URL: "+ URL);
         log.info("BUNDLE DATA: "+ DATAFILE);
 
