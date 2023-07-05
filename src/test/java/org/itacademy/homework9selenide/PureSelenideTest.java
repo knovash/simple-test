@@ -16,7 +16,6 @@ public class PureSelenideTest extends BaseTest{
     @Test(testName = "SelenideTest")
     public void pureSelenideTest() {
         log.info("TEST SEARCH");
-        open("https://donerking.by/");
         log.info("CLICK SEARCH BUTTON");
         $(By.xpath("//a[@class='main-header__search-block']//*[name()='svg']")).click();
         log.info("ENTER TEXT IN SEARCH FIELD");

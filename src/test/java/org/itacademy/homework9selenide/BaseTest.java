@@ -1,15 +1,13 @@
 package org.itacademy.homework9selenide;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.qameta.allure.selenide.LogType;
 import lombok.extern.log4j.Log4j2;
-import org.itacademy.homework9selenide.utils.Config;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -75,5 +73,16 @@ public class BaseTest {
         capabilities.setVersion(version);
         capabilities.setCapability("selenoid:options", options);
         Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeMethod
+    public void beforeMethod() {
+        log.info("BEFORE METHOD open home page: ");
+        Selenide.open(URL);
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        Selenide.clearBrowserCookies();
     }
 }
