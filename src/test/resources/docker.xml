@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MainTest" parallel="tests" thread-count="2">
+
+    <parameter name="startType" value="docker"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="version" value="114.0"/>
+
+    <test name="Simple">
+        <classes>
+            <class name="org.itacademy.homework9selenide.PureSelenideTest"/>
+        </classes>
+    </test>
+
+</suite>
