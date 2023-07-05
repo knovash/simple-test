@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 
+import static com.codeborne.selenide.Browsers.CHROME;
+
 @Log4j2
 public class BaseTest {
 
@@ -22,10 +24,25 @@ public class BaseTest {
     public void start(String startType,
                       @Optional("browser") String browser,
                       @Optional("version") String version) {
-       log.info("BEFORE CLASS startType run: " + startType);
-        log.info("BEFORE CLASS START DOCKER ");
-        startDocker(browser, version);
-   }
+        log.info("BEFORE CLASS startType run: " + startType);
+        if (startType.equals("local")) {
+            startLocal();
+        } else if (startType.equals("docker")) {
+            startDocker(browser, version);
+        }
+    }
+
+    public static void startLocal() {
+        log.info("START TYPE LOCAL");
+        SelenideLogger.addListener("allure", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(true)
+                .enableLogs(LogType.BROWSER, Level.ALL));
+        Configuration.browserSize = "1920x1080";
+        Configuration.browser = CHROME;
+        /** https://github.com/selenide/selenide/issues/1268 def 30 sec. for mobile connection 90 000 msec */
+        Configuration.pageLoadTimeout = 90000;
+    }
 
    public static void startDocker(String browser, String version) {
         log.info("START TYPE DOCKER");
