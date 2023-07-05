@@ -3,9 +3,11 @@ package org.itacademy.homework9selenide;
 import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Description;
 import lombok.extern.log4j.Log4j2;
+import models.MenuItem;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.DataProviderSearch;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -13,9 +15,12 @@ import static com.codeborne.selenide.Selenide.*;
 public class PureSelenideTest extends BaseTest{
 
     @Description("Verifys search result items")
-    @Test(testName = "SelenideTest")
-    public void pureSelenideTest() {
+    @Test(testName = "SearchResultsTest",
+            dataProvider = "menuItems",
+            dataProviderClass = DataProviderSearch.class)
+    public void pureSelenideTest(MenuItem menuItem) {
         log.info("TEST SEARCH");
+        log.info("DATA " + menuItem.getName());
         log.info("CLICK SEARCH BUTTON");
         $(By.xpath("//a[@class='main-header__search-block']//*[name()='svg']")).click();
         log.info("ENTER TEXT IN SEARCH FIELD");
