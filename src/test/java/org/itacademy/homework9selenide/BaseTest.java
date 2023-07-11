@@ -28,7 +28,7 @@ public class BaseTest {
 //        WebDriver driver = new ChromeDriver();
 
 //        Configuration.browserSize = "1920x1080";
-        Configuration.browser = FIREFOX;
+        Configuration.browser = CHROME;
 //        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64 114/chromedriver");
 //        System.setProperty("selenide.browser", "Chrome");
     }
