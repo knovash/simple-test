@@ -17,14 +17,9 @@ public class PureSelenideTest {
 
     @Test()
     public void pureSelenideTest() {
-
-
-
         log.info("BEFORE CLASS");
         System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64_114/chromedriver");
-
-
-
+        
         var chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--no-sandbox"); // with this it works; without, doesn't
 //        var driver = new ChromeDriver(chromeOptions);
