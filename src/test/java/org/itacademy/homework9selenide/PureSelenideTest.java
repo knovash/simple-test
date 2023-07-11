@@ -29,7 +29,7 @@ public class PureSelenideTest extends BaseTest{
         $(By.xpath("//input[@class='search-header__input']")).submit();
         log.info("GET RESULT COLLECTION");
         ElementsCollection resultElements = $$(By.xpath("//div[@class='col-xxs-12 col-xs-6 col-sm-4 col-md-4 col-lg-4 menuItemWrapper']//div[@class='imageData']//div[@class='h4']"));
-        resultElements.stream()
+        resultElements.asFixedIterable().stream()
                 .map(selenideElement -> selenideElement.getText().toLowerCase())
                 .peek(text -> log.info("ITEM :" + text))
                 .forEach(text -> Assert.assertTrue(text.contains("бургер"), "not match"));
