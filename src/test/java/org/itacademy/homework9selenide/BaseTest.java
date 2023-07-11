@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import java.util.HashMap;
 
 import static com.codeborne.selenide.Browsers.CHROME;
+import static com.codeborne.selenide.Browsers.FIREFOX;
 
 @Log4j2
 public class BaseTest {
@@ -27,7 +28,7 @@ public class BaseTest {
 //        WebDriver driver = new ChromeDriver();
 
 //        Configuration.browserSize = "1920x1080";
-//        Configuration.browser = CHROME;
+        Configuration.browser = FIREFOX;
 //        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64 114/chromedriver");
 //        System.setProperty("selenide.browser", "Chrome");
     }
