@@ -23,8 +23,8 @@ public class BaseTest {
     public static void beforeClass() {
         log.info("BEFORE CLASS");
 
-        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64_114/chromedriver");
-        WebDriver driver = new ChromeDriver();
+//        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64_114/chromedriver");
+//        WebDriver driver = new ChromeDriver();
 
 //        Configuration.browserSize = "1920x1080";
 //        Configuration.browser = CHROME;
