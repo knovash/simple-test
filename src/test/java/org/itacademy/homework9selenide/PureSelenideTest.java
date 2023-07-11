@@ -1,7 +1,6 @@
 package org.itacademy.homework9selenide;
 
 import com.codeborne.selenide.ElementsCollection;
-import io.qameta.allure.Description;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -13,7 +12,6 @@ import static com.codeborne.selenide.Selenide.$$;
 @Log4j2
 public class PureSelenideTest extends BaseTest{
 
-    @Description("Verifys search result items")
     @Test()
     public void pureSelenideTest() {
         String item = "бургер";
