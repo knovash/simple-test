@@ -23,20 +23,29 @@ public class BaseTest {
     @BeforeClass
     public static void beforeClass() {
         log.info("BEFORE CLASS");
+        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64_114/chromedriver");
 
-//        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64_114/chromedriver");
-//        WebDriver driver = new ChromeDriver();
+
+
+        var chromeOptions = new ChromeOptions();
+         chromeOptions.addArguments("--no-sandbox"); // with this it works; without, doesn't
+//        var driver = new ChromeDriver(chromeOptions);
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
+
+        driver.get("https://donerking.by/");
+
+
 
 //        Configuration.browserSize = "1920x1080";
-        Configuration.browser = CHROME;
+//        Configuration.browser = CHROME;
+//        Configuration.browserCapabilities.setCapability("");
 //        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64 114/chromedriver");
 //        System.setProperty("selenide.browser", "Chrome");
+
+//        Selenide.open("https://donerking.by/");
     }
 
-    @BeforeMethod
-    public void beforeMethod() {
-        log.info("BEFORE METHOD open home page: ");
-        Selenide.open("https://donerking.by/");
-    }
+
 
 }
