@@ -28,8 +28,8 @@ public class BaseTest {
     @BeforeClass
     public static void startLocal() {
         log.info("START TYPE LOCAL");
-//        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64 107/chromedriver");
-//        System.setProperty("selenide.browser", "Chrome");
+        System.setProperty("webdriver.chrome.driver", "/home/konstantin/Downloads/chromedriver_linux64 114/chromedriver");
+        System.setProperty("selenide.browser", "Chrome");
         SelenideLogger.addListener("allure", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(true)
