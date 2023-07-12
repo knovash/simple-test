@@ -19,8 +19,8 @@ public class PureSelenideTest {
     @Test()
     public void pureSelenideTest() {
         log.info("BEFORE CLASS");
-//        Configuration.browser = CHROME;
-        Configuration.browser = FIREFOX;
+        Configuration.browser = CHROME;
+//        Configuration.browser = FIREFOX;
         Selenide.open("https://donerking.by/");
 
 
