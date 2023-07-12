@@ -14,12 +14,9 @@
         <slf4j-version>2.0.7</slf4j-version>
         <apache-logging-log4j-version>2.18.0</apache-logging-log4j-version>
         <projectlombok-version>1.18.28</projectlombok-version>
-        <fasterxml-jackson-core-version>2.10.0</fasterxml-jackson-core-version>
-        <qameta-allure-version>2.22.1</qameta-allure-version>
         <maven-compiler-plugin-version>3.11.0</maven-compiler-plugin-version>
         <java-version>11</java-version>
         <maven-surefire-plugin-version>3.1.2</maven-surefire-plugin-version>
-        <aspectj.version>1.9.2</aspectj.version>
     </properties>
 
     <dependencies>
@@ -65,27 +62,6 @@
             <artifactId>lombok</artifactId>
             <version>${projectlombok-version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${fasterxml-jackson-core-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>${qameta-allure-version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-java-commons</artifactId>
-            <version>${qameta-allure-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-selenide</artifactId>
-            <version>${qameta-allure-version}</version>
         </dependency>
     </dependencies>
 
