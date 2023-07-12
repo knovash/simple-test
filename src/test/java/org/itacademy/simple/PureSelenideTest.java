@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Browsers.CHROME;
+import static com.codeborne.selenide.Browsers.FIREFOX;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -18,7 +19,8 @@ public class PureSelenideTest {
     @Test()
     public void pureSelenideTest() {
         log.info("BEFORE CLASS");
-        Configuration.browser = CHROME;
+//        Configuration.browser = CHROME;
+        Configuration.browser = FIREFOX;
         Selenide.open("https://donerking.by/");
 
 
